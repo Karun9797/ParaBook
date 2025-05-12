@@ -1,0 +1,355 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #056cc5;
+  width: 100%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.signup-wrapper {
+  width: 80vw;
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+}
+.img > img {
+  width: 650px;
+  height: 650px;
+  transition: opacity 1s ease-in-out;
+}
+.signup-form {
+  width: 70%;
+  height: 700px;
+  background-color: #ffffff;
+  opacity: 90%;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 40px #191919cb;
+  position: relative;
+}
+.signup-form {
+  padding: 100px 60px;
+  opacity: 0.9;
+}
+.signup-form > p {
+  font-family: sans-serif;
+  font-size: 24px;
+  text-align: center;
+  color: #262626;
+  margin-top: 5px;
+}
+.circle1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #a6ffa3;
+  position: absolute;
+  opacity: 0.3;
+  left: 36%;
+  top: 13%;
+  z-index: -1;
+}
+.circle2 {
+  width: 27px;
+  height: 27px;
+  border-radius: 50px;
+  background-color: #f6f200;
+  position: absolute;
+  opacity: 0.3;
+  left: 37%;
+  top: 14.5%;
+  z-index: -1;
+}
+.form {
+  margin: 20px auto 0 auto;
+  width: 90%;
+}
+.input-box-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.input-box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.error-icon {
+  position: absolute;
+  right: 3%;
+  color: red;
+  display: none;
+}
+.error-icon-show {
+  position: absolute;
+  right: 3%;
+  color: red;
+  display: block;
+}
+.check-icon {
+  position: absolute;
+  right: 3%;
+  color: #0659e7;
+  display: none;
+}
+.check-icon-show {
+  position: absolute;
+  right: 3%;
+  color: #0659e7;
+  display: block;
+}
+.input-box > input {
+  flex: 1;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #0659e7;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-radius: 10px;
+}
+.input-box > input {
+  width: 100%;
+  height: 20px;
+  padding: 20px 10px;
+  margin-block: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(212, 212, 212);
+}
+.input-box > select {
+  width: 48.5%;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(212, 212, 212);
+  margin-block: 10px;
+  height: auto;
+  box-sizing: border-box;
+}
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: #6a747d;
+  cursor: pointer;
+}
+.password-requirements > ul {
+  list-style: none;
+  padding: 0px 0px 0px 20px;
+}
+.pwd-rqm-li {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 10pt;
+  margin-block: 5px;
+  color: rgba(249, 15, 15, 0.8);
+  display: none;
+}
+.pwd-rqm-li-show {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 10pt;
+  margin-block: 5px;
+  color: rgba(249, 15, 15, 0.8);
+  /* color: #0659e7; */
+  display: block;
+}
+.pwd-rqm-li-show-valid {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 10pt;
+  margin-block: 5px;
+  color: #0659e7;
+  display: block;
+}
+.error-message-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.error-message {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 10pt;
+  margin-block: 5px;
+  color: rgba(249, 15, 15, 0.8);
+  display: none;
+}
+
+.error-message-show {
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 10pt;
+  margin-block: 5px;
+  color: rgba(249, 15, 15, 0.8);
+  display: block;
+}
+.check-box {
+  margin-top: 5px;
+}
+.check-box-col {
+  width: 50%;
+  float: left;
+  padding: 0px 0px 0px 10px;
+}
+.check-box-col > label {
+  font-family: "Montserrat";
+  font-size: 14px;
+}
+.check-box-col > label > input {
+  margin-left: 10px;
+}
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+.submit-box > input {
+  font-family: sans-serif;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-image: linear-gradient(to right, #0659e7, #69acff);
+  opacity: 0.85;
+  transition: 0.05s ease-in-out;
+}
+.submit-box > input:hover {
+  opacity: 1;
+  transition: 0.05s ease-in-out;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #a4a1a1;
+  margin: 20px 2%;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 0px 20px;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #a4a1a1;
+}
+.separator > span {
+  padding: 0px 10px;
+}
+.alt-signup {
+  padding: 0px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alt-signup > a {
+  width: 48%;
+  padding: 8px 20px;
+  background-color: white;
+  border: 1px solid rgb(231, 229, 229);
+  border-radius: 4px;
+  text-decoration: none;
+  color: #242424;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  opacity: 0.8;
+  transition: all 0.1s;
+}
+.alt-signup > a:hover {
+  opacity: 1;
+  transition: all 0.1s;
+  transform: scale(1.05);
+  text-decoration: none;
+  color: #242424;
+}
+.google-btn::before {
+  content: "";
+  background-image: url("../Icons/google.png");
+  background-size: cover;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.facebook-btn::before {
+  content: "";
+  background-image: url("../Icons/facebook.png");
+  background-size: cover;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.have-account {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.have-account > p {
+  font-family: sans-serif;
+  font-size: 14px;
+  padding-right: 5px;
+  color: #333434;
+}
+.have-account > a {
+  font-family: sans-serif;
+  font-size: 14px;
+  padding-right: 5px;
+  text-decoration: underline;
+  color: #058dfd;
+}
+@media (max-width: 1100px) {
+  .sign-form {
+    width: 400px;
+  }
+  .sign-form > h1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .sign-form {
+    width: 300px;
+  }
+}
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.foot-para {
+  width: 70%;
+  padding: 130px 0px 130px 130px;
+  text-align: justify;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  font-size: 18px;
+}
+.foot-img {
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+}
+.foot-img > img {
+  position: absolute;
+  left: 0%;
+  top: -10%;
+}
