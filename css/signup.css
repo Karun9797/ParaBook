@@ -1,10 +1,15 @@
+:root {
+  --color-BG: #056cc5;
+  --color-blue: #0659e7;
+  --color-red: ;
+}
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 body {
-  background-color: #056cc5;
+  background-color: var(--color-BG);
   width: 100%;
 }
 .container {
@@ -97,13 +102,13 @@ body {
 .check-icon {
   position: absolute;
   right: 3%;
-  color: #0659e7;
+  color: var(--color-blue);
   display: none;
 }
 .check-icon-show {
   position: absolute;
   right: 3%;
-  color: #0659e7;
+  color: var(--color-blue);
   display: block;
 }
 .input-box > input {
@@ -111,7 +116,7 @@ body {
 }
 input:focus {
   outline: none;
-  border: 2px solid #0659e7;
+  border: 2px solid var(--color-blue);
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   border-radius: 10px;
 }
@@ -167,7 +172,7 @@ input:focus {
   font-style: italic;
   font-size: 10pt;
   margin-block: 5px;
-  color: #0659e7;
+  color: var(--color-blue);
   display: block;
 }
 .error-message-wrapper {
@@ -219,7 +224,7 @@ input[type="checkbox"] {
   border-radius: 10px;
   border: none;
   color: white;
-  background-image: linear-gradient(to right, #0659e7, #69acff);
+  background-image: linear-gradient(to right, var(--color-blue), #69acff);
   opacity: 0.85;
   transition: 0.05s ease-in-out;
 }

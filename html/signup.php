@@ -62,7 +62,7 @@
                     <div class="input-box-wrapper">
                         <div class="input-box">
                             <input type="password" name="password" placeholder="Password" id="password" class="pwd" 
-                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$&!.])[A-Za-z\d@$&!.]{8,}$" required />
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z\\d]).{8,}$" required />
                             <span class="error-icon">
                                 <i class='bx bx-error-circle'></i>
                             </span>

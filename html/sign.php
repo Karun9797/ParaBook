@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "signup";
+$database = "parabook";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -38,7 +38,7 @@ $sql = "INSERT INTO users (first_name, last_name, email, contact, password, dob,
 
 if ($conn->query($sql) === TRUE) {
    // echo "Signup successful!";
-   $_conn->close();
+   $conn->close();
     include("login.php");
 } else {
     echo "Error: " . $conn->error;
