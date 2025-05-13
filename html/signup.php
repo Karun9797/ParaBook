@@ -90,7 +90,7 @@
 
                     <div class="input-box">
                         <input type="date" name="DOB" date-validation required />
-                        <select id="country" name="country">
+                        <select id="country" name="country" required>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
                             <option value="Albania">Albania</option>
