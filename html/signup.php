@@ -17,7 +17,7 @@
                 <div class="circle1"></div>
                 <div class="circle2"></div>
                 <p>Create an account</p>
-                <form class="form" method="post" action="">
+                <form class="form" method="post" action="sign.php">
                     <div class="input-box-wrapper">
                         <div class="input-box">
                             <input type="text" minlength="2" name="firstName" id="firstName" placeholder="First Name" text-only required />
@@ -90,7 +90,9 @@
 
                     <div class="input-box">
                         <input type="date" name="DOB" date-validation required />
+
                         <select id="country" name="country" required>
+
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
                             <option value="Albania">Albania</option>
@@ -335,6 +337,7 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
+
                         </select>
                     </div>
                     <div class="check-box">
@@ -353,7 +356,7 @@
                         </div>
                     </div>
                     <div class="submit-box">
-                        <input type="submit" value="Sign up" />
+                        <input type="submit" value="Sign up" action="login.php" />
                     </div>
                 </form>
                 <div class="separator">
