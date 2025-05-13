@@ -30,7 +30,7 @@
           <div class="input-box-wrapper">  
             <div class="input-box">
                 <input type="text" name="email" placeholder="Email"
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required />
+                pattern="^[a-zA-Z0-9._%+/-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required />
                 <span class="error-icon">
                     <i class='bx bx-error-circle'></i>
                 </span>
@@ -44,8 +44,10 @@
               <i class="bx bx-hide eye-icon"></i>
             </div>
             <div class="check-box">
-              <label><input type="checkbox" required />Remember me</label>
-              <a href="">Forgot Password?</a>
+              <label>
+                <input type="checkbox" required class="remember-checkbox" /> Remember me
+              </label>
+              <a href="#">Forgot Password?</a>
             </div>
             <div class="submit-box">
               <input type="submit" value="Log In" name="loginfrm" />

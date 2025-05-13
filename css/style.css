@@ -162,6 +162,10 @@ input:focus {
 .check-box > label > input[type="checkbox"] {
   margin-right: 5px;
 }
+.check-box label.invalid {
+  color: red;
+  accent-color: red;
+}
 .submit-box > input {
   font-family: sans-serif;
   font-size: 16px;

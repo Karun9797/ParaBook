@@ -17,7 +17,7 @@ showPWDIcons.forEach((icon) => {
   });
 });
 
-// name validation
+// form validation
 
 const validateForm = (formSelector) => {
   const formElement = document.querySelector(formSelector);
