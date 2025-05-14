@@ -1,7 +1,6 @@
 :root {
   --color-BG: #056cc5;
   --color-blue: #0659e7;
-  --color-red: ;
 }
 * {
   margin: 0px;
@@ -15,11 +14,10 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
 }
 .signup-wrapper {
-  width: 80vw;
-  margin-top: 15vh;
+  width: 80%;
+  margin-top: 4%;
   display: flex;
   justify-content: center;
 }
@@ -30,15 +28,12 @@ body {
 }
 .signup-form {
   width: 70%;
-  height: 700px;
   background-color: #ffffff;
   opacity: 90%;
   border-radius: 1rem;
   box-shadow: 5px 5px 40px #191919cb;
   position: relative;
-}
-.signup-form {
-  padding: 100px 60px;
+  padding: 50px 50px 30px 50px;
   opacity: 0.9;
 }
 .signup-form > p {
@@ -188,7 +183,6 @@ input:focus {
   color: rgba(249, 15, 15, 0.8);
   display: none;
 }
-
 .error-message-show {
   font-family: sans-serif;
   font-style: italic;
@@ -199,15 +193,25 @@ input:focus {
 }
 .check-box {
   margin-top: 5px;
+  display: flex;
 }
 .check-box-col {
   width: 50%;
-  float: left;
+  display: flex;
+  flex-direction: row;
   padding: 0px 0px 0px 10px;
 }
-.check-box-col > label {
+.usertype-wrapper {
+  display: flex;
   font-family: "Montserrat";
   font-size: 14px;
+}
+.usertype-wrapper > .usertype {
+  font-family: "Montserrat";
+  font-size: 14px;
+}
+.user-second-margin {
+  margin-left: 10px;
 }
 .check-box-col > label > input {
   margin-left: 10px;
@@ -321,19 +325,6 @@ input[type="checkbox"] {
   text-decoration: underline;
   color: #058dfd;
 }
-@media (max-width: 1100px) {
-  .sign-form {
-    width: 400px;
-  }
-  .sign-form > h1 {
-    font-size: 20px;
-  }
-}
-@media (max-width: 500px) {
-  .sign-form {
-    width: 300px;
-  }
-}
 footer {
   width: 100%;
   display: flex;
@@ -357,4 +348,176 @@ footer {
   position: absolute;
   left: 0%;
   top: -10%;
+}
+
+/* responsive CSS */
+
+@media (max-width: 1340px) {
+  .usertype-wrapper {
+    flex-direction: column;
+  }
+  .input-box-wrapper {
+    flex-direction: row;
+  }
+  .signup-form {
+    width: 650px;
+    padding: 50px 20px;
+  }
+  .signup-form > p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .signup-form {
+    width: 600px;
+  }
+  .signup-form > p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 780px) {
+  .signup-form {
+    width: 500px;
+    margin-top: 20px;
+  }
+  .signup-form > h1 {
+    font-size: 20px;
+  }
+  .google-btn::before {
+    left: 30%;
+  }
+  .facebook-btn::before {
+    left: 25%;
+  }
+  .signup-form > p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 580px) {
+  .signup-form {
+    width: 500px;
+    margin-top: 20px;
+    padding: 30px 30px;
+  }
+  #country {
+    width: 100%;
+  }
+  .input-box {
+    flex-direction: column;
+  }
+  .input-box-wrapper {
+    flex-direction: column;
+  }
+  .error-icon,
+  .check-icon {
+    transform: translateY(150%);
+  }
+  .check-box-col {
+    flex-direction: column;
+  }
+  .usertype-wrapper {
+    flex-direction: column;
+  }
+  .foot-para {
+    width: 100%;
+    padding: 60px 0px 50px 0px;
+    margin: 0px 15%;
+  }
+  .foot-para > p {
+    font-size: 12px;
+  }
+  .foot-img {
+    display: none;
+  }
+  .google-btn::before {
+    left: 25%;
+  }
+  .facebook-btn::before {
+    left: 20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .foot-para {
+    width: 100%;
+    padding: 60px 0px 50px 0px;
+    margin: 0px 15%;
+  }
+  .foot-para > p {
+    font-size: 12px;
+  }
+  .foot-img {
+    display: none;
+  }
+  .google-btn::before {
+    left: 22%;
+  }
+  .facebook-btn::before {
+    left: 16%;
+  }
+}
+@media (max-width: 440px) {
+  .google-btn::before {
+    left: 20%;
+  }
+  .facebook-btn::before {
+    left: 12%;
+  }
+}
+@media (max-width: 420px) {
+  .google-btn::before {
+    left: 20%;
+  }
+  .facebook-btn::before {
+    left: 12%;
+  }
+  .signup-form {
+    padding: 30px 10px;
+  }
+  .check-box-col {
+    width: 100%;
+  }
+  .have-account p,
+  .have-account a {
+    font-size: 14px;
+  }
+}
+@media (max-width: 390px) {
+  .check-box {
+    flex-direction: column;
+  }
+  .usertype-wrapper {
+    flex-direction: row;
+  }
+  .user-second-margin {
+    margin-left: 10px;
+  }
+  .google-btn::before {
+    left: 5%;
+  }
+  .facebook-btn::before {
+    left: 5%;
+  }
+  .have-account p,
+  .have-account a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 330px) {
+  .check-box {
+    flex-direction: column;
+  }
+  .usertype-wrapper {
+    flex-direction: column;
+  }
+  .google-btn::before {
+    left: 5%;
+  }
+  .facebook-btn::before {
+    left: 5%;
+  }
+  .have-account p,
+  .have-account a {
+    font-size: 6.5pt;
+  }
 }

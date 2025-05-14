@@ -14,8 +14,8 @@
     <div class="container">
         <div class="signup-wrapper">
             <div class="signup-form">
-                <div class="circle1"></div>
-                <div class="circle2"></div>
+                <!-- <div class="circle1"></div>
+                <div class="circle2"></div> -->
                 <p>Create an account</p>
                 <form class="form" method="post" action="sign.php">
                     <div class="input-box-wrapper">
@@ -342,17 +342,33 @@
                     </div>
                     <div class="check-box">
                         <div class="check-box-col">
-                            <label>Are you a:</label>
-                            <label><input type="radio" name="userType" value="passenger" required radio-group />
-                                Passenger</label>
-                            <label><input type="radio" name="userType" value="company" required radio-group/>
+                            <div class="usertype-wrapper">
+                                <label>Are you a:</label>
+                            </div>
+                            <div class="usertype-wrapper" style="margin-left:10px;">
+                                <div class="usertype">
+                                    <label class="user-second-margin"><input type="radio" name="userType" value="passenger" required radio-group />
+                                    Passenger</label>
+                                </div>
+                                <div class="usertype">
+                                <label class="user-second-margin"><input type="radio" name="userType" value="company" required radio-group/>
                                 Company</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="check-box-col">
-                            <label>Gender:</label>
-                            <label><input type="radio" name="gender" value="Male" required radio-group/>
-                                Male</label>
-                            <label><input type="radio" name="gender" value="Female" required radio-group/>Female</label>
+                            <div class="usertype-wrapper">
+                                <label>Gender:</label>
+                            </div>
+                            <div class="usertype-wrapper" style="margin-left:10px;">
+                                <div class="usertype">
+                                    <label class="user-second-margin"><input type="radio" name="gender" value="Male" required radio-group/>
+                                        Male</label>
+                                </div>
+                                <div class="usertype">
+                                    <label class="user-second-margin"><input type="radio" name="gender" value="Female" required radio-group/>Female</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="submit-box">

@@ -84,11 +84,11 @@ const validateForm = (formSelector) => {
     const selected = [...group].some((input) => input.checked);
 
     if (!selected) {
-      const container = group[0].closest(".check-box-col");
+      const container = group[0].closest(".usertype-wrapper");
       container.style.borderBottom = "1px solid red";
       return false;
     } else {
-      const container = group[0].closest(".check-box-col");
+      const container = group[0].closest(".usertype-wrapper");
       container.style.border = "none";
       return true;
     }
