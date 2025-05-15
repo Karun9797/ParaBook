@@ -42,7 +42,7 @@
                     </div>
                     <div class="input-box-wrapper">
                         <div class="input-box">
-                            <input type="text" name="email" placeholder="Email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                            <input type="text" name="email" placeholder="Email" pattern="^[^\s@]{3,}@[^\s@]{3,}\.[^\s@]{2,}$"
                                 required />
                             <span class="error-icon">
                                 <i class='bx bx-error-circle'></i>
@@ -66,9 +66,6 @@
 
                             <input type="password" name="password" placeholder="Password" id="password" class="pwd"
                                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$&!.])[A-Za-z\d@$&!.]{8,}$" required />
-
-                            <input type="password" name="password" placeholder="Password" id="password" class="pwd" 
-                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z\\d]).{8,}$" required />
 
                             <span class="error-icon">
                                 <i class='bx bx-error-circle'></i>
@@ -355,11 +352,6 @@
                     <div class="check-box">
                         <div class="check-box-col">
 
-                            <label>Are you a:</label>
-                            <label><input type="radio" name="userType" value="passenger" required radio-group />
-                                Passenger</label>
-                            <label><input type="radio" name="userType" value="company" required radio-group />
-
                             <div class="usertype-wrapper">
                                 <label>Are you a:</label>
                             </div>
@@ -376,12 +368,6 @@
                             </div>
                         </div>
                         <div class="check-box-col">
-
-                            <label>Gender:</label>
-                            <label><input type="radio" name="gender" value="Male" required radio-group />
-                                Male</label>
-                            <label><input type="radio" name="gender" value="Female" required
-                                    radio-group />Female</label>
 
                             <div class="usertype-wrapper">
                                 <label>Gender:</label>

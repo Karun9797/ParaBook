@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --color-BG: #056cc5;
   --color-blue: #0659e7;
@@ -37,7 +39,7 @@ body {
   opacity: 0.9;
 }
 .signup-form > p {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 24px;
   text-align: center;
   color: #262626;
@@ -146,7 +148,7 @@ input:focus {
   padding: 0px 0px 0px 20px;
 }
 .pwd-rqm-li {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 10pt;
   margin-block: 5px;
@@ -154,7 +156,7 @@ input:focus {
   display: none;
 }
 .pwd-rqm-li-show {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 10pt;
   margin-block: 5px;
@@ -163,7 +165,7 @@ input:focus {
   display: block;
 }
 .pwd-rqm-li-show-valid {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 10pt;
   margin-block: 5px;
@@ -176,7 +178,7 @@ input:focus {
   justify-content: space-between;
 }
 .error-message {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 10pt;
   margin-block: 5px;
@@ -184,7 +186,7 @@ input:focus {
   display: none;
 }
 .error-message-show {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 10pt;
   margin-block: 5px;
@@ -203,11 +205,11 @@ input:focus {
 }
 .usertype-wrapper {
   display: flex;
-  font-family: "Montserrat";
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 .usertype-wrapper > .usertype {
-  font-family: "Montserrat";
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 .user-second-margin {
@@ -220,7 +222,7 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 .submit-box > input {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   width: 100%;
   margin-top: 30px;
@@ -242,7 +244,7 @@ input[type="checkbox"] {
   text-align: center;
   color: #a4a1a1;
   margin: 20px 2%;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   padding: 0px 20px;
 }
@@ -269,7 +271,7 @@ input[type="checkbox"] {
   border-radius: 4px;
   text-decoration: none;
   color: #242424;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   text-align: center;
   position: relative;
@@ -313,13 +315,13 @@ input[type="checkbox"] {
   padding: 20px;
 }
 .have-account > p {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   padding-right: 5px;
   color: #333434;
 }
 .have-account > a {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   padding-right: 5px;
   text-decoration: underline;
@@ -335,7 +337,7 @@ footer {
   width: 70%;
   padding: 130px 0px 130px 130px;
   text-align: justify;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: white;
   font-size: 18px;
 }

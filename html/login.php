@@ -30,7 +30,7 @@
           <div class="input-box-wrapper">  
             <div class="input-box">
                 <input type="text" name="email" placeholder="Email"
-                pattern="^[a-zA-Z0-9._%+/-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required />
+                pattern="^[^\s@]{3,}@[^\s@]{3,}\.[^\s@]{2,}$" required />
                 <span class="error-icon">
                     <i class='bx bx-error-circle'></i>
                 </span>

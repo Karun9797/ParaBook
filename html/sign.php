@@ -17,11 +17,10 @@ $countryy = "Nepal";
 // $_POST['country']; // fallback
 $userTypee = $_POST['userType'];
 $genderr = $_POST['gender'];
-$check_email = "SELECT * FROM register_tbl WHERE email = '$emaill'";
+$check_email = "SELECT * FROM users WHERE email = '$emaill'";
 $check_eemail = mysqli_query($connecr, $check_email);
-function sendmail_verify($firstNamee, $emaill, $_vrerify)
+function sendmail_verify($firstNamee, $emaill, $_verify)
 {
-=======
 // Replace with your DB credentials
 $servername = "localhost";
 $username = "root";
@@ -63,7 +62,7 @@ if (mysqli_num_rows($check_eemail) > 0) {
     echo "<script>alert('Email already exists!');</script>";
     echo "<script>window.location.href='signup.php';</script>";
     //exit();
-=======
+
 // SQL Insert
 $sql = "INSERT INTO users (first_name, last_name, email, contact, password, dob, country, user_type, gender)
         VALUES ('$firstName', '$lastName', '$email', '$contact', '$password', '$dob', '$country', '$userType', '$gender')";
@@ -74,15 +73,15 @@ if ($conn->query($sql) === TRUE) {
     include("login.php");
 
 } else {
-    $_vrerify = md5(rand());
-    $_data = ("INSERT INTO register_tbl (firstname, lastname,email,contact,password,d_o_b,country,status,Gender,verify_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+    $_verify = md5(rand());
+    $_data = ("INSERT INTO users (firstname, lastname,email,contact,password,d_o_b,country,status,Gender,verify_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
     $_data = $connecr->prepare("$_data");
     $_data->bind_param("ssssssssss", $firstNamee, $lastNamee, $emaill, $contactt, $hashedPassword, $dobb, $countryy, $userTypee, $genderr, $_vrerify);
     $_data->execute();
     if ($_data) {
         echo "<script>alert('Registration successful!');</script>";
         //  echo "<script>window.location.href='login.php';</script>";
-        sendmail_verify($firstNamee, $emaill, $_vrerify);
+        sendmail_verify($firstNamee, $emaill, $_verify);
         echo "sendmail_verify";
     } else {
         echo "<script>alert('Registration failed!');</script>";
@@ -91,5 +90,5 @@ if ($conn->query($sql) === TRUE) {
     $connecr->close();
     $_data->close();
 }
-
+}
 ?>
