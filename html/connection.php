@@ -12,7 +12,7 @@ try {
     echo $e->getMessage();
 }
 if ($connecr) {
-    // echo "Connection successful";
+    echo "Connection successful";
 } else {
     echo "Connection failed";
 }
