@@ -26,12 +26,10 @@ const validateForm = (formSelector) => {
     {
       attribute: "required",
       isValid: (input) => input.value.trim() === "",
-      errorMessage: "This field is required",
     },
     {
       attribute: "text-only",
       isValid: (input) => !/^[A-Za-z\s]{2,}$/.test(input.value),
-      errorMessage: "Only letters and spaces allowed (min 2 characters)",
     },
     {
       attribute: "pattern",
@@ -39,7 +37,6 @@ const validateForm = (formSelector) => {
         const regex = new RegExp(input.pattern);
         return !regex.test(input.value);
       },
-      errorMessage: "Doesn't match required pattern",
     },
     {
       attribute: "match",
@@ -71,8 +68,6 @@ const validateForm = (formSelector) => {
 
         return enteredDate > ageDate;
       },
-      errorMessage:
-        "Enter a valid date (must be 13+ years old and not in the future)",
     },
     {
       attribute: "radio-group",
@@ -89,11 +84,11 @@ const validateForm = (formSelector) => {
     const selected = [...group].some((input) => input.checked);
 
     if (!selected) {
-      const container = group[0].closest(".check-box-col");
+      const container = group[0].closest(".usertype-wrapper");
       container.style.borderBottom = "1px solid red";
       return false;
     } else {
-      const container = group[0].closest(".check-box-col");
+      const container = group[0].closest(".usertype-wrapper");
       container.style.border = "none";
       return true;
     }
@@ -107,14 +102,13 @@ const validateForm = (formSelector) => {
     const requirements = document.querySelectorAll(".pwd-rqm-li");
 
     const hasMinLength = password.length >= 8;
-    const hasSpecialChar = /[@$&!.]/.test(password);
+    const hasSpecialChar = /[^A-Za-z0-9]/.test(password);
     const hasNumber = /\d/.test(password);
     const hasMixedCase = /[A-Z]/.test(password) && /[a-z]/.test(password);
 
     const allValid =
       hasMinLength && hasSpecialChar && hasNumber && hasMixedCase;
 
-    // Always show the requirement list unless ALL conditions are met
     requirements.forEach((li) => {
       li.style.display = allValid ? "none" : "block";
     });
@@ -123,25 +117,21 @@ const validateForm = (formSelector) => {
     toggleRequirementClass(requirements[1], hasSpecialChar);
     toggleRequirementClass(requirements[2], hasNumber);
     toggleRequirementClass(requirements[3], hasMixedCase);
+
+    return allValid; // Add this line to return the validation status
   };
 
-  const validateSingleFormInput = (
-    formInput,
-    isConfirmPasswordFocused = false
-  ) => {
+  const validateSingleFormInput = (formInput) => {
     const input = formInput.querySelector("input");
     const error = formInput.querySelector(".error-icon");
     const success = formInput.querySelector(".check-icon");
-    const errorMessage = formInput.querySelector(".error-message");
 
     let formInputError = false;
     let currentErrorMessage = "";
 
     for (const option of validateOptions) {
       if (input.hasAttribute(option.attribute)) {
-        // Special handling for password match validation
         if (option.attribute === "match") {
-          // Only validate match if confirm password field is focused or both fields have values
           if (
             input.value &&
             document.querySelector(`[name="${input.getAttribute("match")}"]`)
@@ -153,40 +143,27 @@ const validateForm = (formSelector) => {
               break;
             }
           }
-        }
-        // Normal validation for other cases
-        else if (option.isValid(input)) {
+        } else if (option.isValid(input)) {
           formInputError = true;
           currentErrorMessage = option.errorMessage;
           break;
         }
       }
     }
-
+    if (input.name === "password") {
+      const passwordValid = validatePasswordRequirements(input.value);
+      if (passwordValid) {
+        formInputError = false;
+        if (error) error.classList.remove("error-icon-show");
+        if (success) success.classList.add("check-icon-show");
+        input.style.borderBottom = "1px solid #0659e7";
+      }
+    }
     if (formInputError) {
       if (error) error.classList.add("error-icon-show");
       if (success) success.classList.remove("check-icon-show");
       input.style.borderBottom = "1px solid red";
 
-      if (errorMessage) {
-        errorMessage.textContent = currentErrorMessage;
-
-        if (input.hasAttribute("match")) {
-          const matchSelector = input.getAttribute("match");
-          const matchedInput = formElement.querySelector(matchSelector);
-
-          const bothFilled =
-            matchedInput?.value.trim() !== "" && input.value.trim() !== "";
-
-          if (bothFilled) {
-            errorMessage.classList.add("error-message-show");
-          } else {
-            errorMessage.classList.remove("error-message-show");
-          }
-        } else {
-          errorMessage.classList.add("error-message-show");
-        }
-      }
       if (input.name === "password") {
         validatePasswordRequirements(input.value);
       }
@@ -194,10 +171,6 @@ const validateForm = (formSelector) => {
       if (error) error.classList.remove("error-icon-show");
       if (success) success.classList.add("check-icon-show");
       input.style.borderBottom = "1px solid #0659e7";
-
-      if (errorMessage) {
-        errorMessage.style.display = "none";
-      }
 
       if (input.name === "password") {
         validatePasswordRequirements(input.value);
@@ -214,14 +187,12 @@ const validateForm = (formSelector) => {
       const input = formInput.querySelector("input");
 
       input.addEventListener("input", () => {
-        // Check if this is the confirm password field
         const isConfirmPassword = input.hasAttribute("match");
         validateSingleFormInput(
           formInput,
           isConfirmPassword && document.activeElement === input
         );
 
-        // If this is the password field, also validate the confirm password field
         if (input.name === "password") {
           const confirmPasswordInput = formElement.querySelector("[match]");
           if (confirmPasswordInput) {
@@ -259,7 +230,7 @@ const validateForm = (formSelector) => {
     const isGenderValid = validateRadioGroup("gender");
 
     if (isValid && isUserTypeValid && isGenderValid) {
-      // console.log("Form is valid, submitting...");
+      console.log("Form is valid, submitting...");
       formElement.submit();
     } else {
       console.log("Form has errors.");

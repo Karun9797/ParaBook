@@ -21,6 +21,12 @@ $check_email = "SELECT * FROM register_tbl WHERE email = '$emaill'";
 $check_eemail = mysqli_query($connecr, $check_email);
 function sendmail_verify($firstNamee, $emaill, $_vrerify)
 {
+=======
+// Replace with your DB credentials
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "parabook";
 
 
 
@@ -52,10 +58,21 @@ function sendmail_verify($firstNamee, $emaill, $_vrerify)
     // $message = "Click the link to verify your email: http://localhost/your_project/verify.php?token=$token";
 }
 
+
 if (mysqli_num_rows($check_eemail) > 0) {
     echo "<script>alert('Email already exists!');</script>";
     echo "<script>window.location.href='signup.php';</script>";
     //exit();
+=======
+// SQL Insert
+$sql = "INSERT INTO users (first_name, last_name, email, contact, password, dob, country, user_type, gender)
+        VALUES ('$firstName', '$lastName', '$email', '$contact', '$password', '$dob', '$country', '$userType', '$gender')";
+
+if ($conn->query($sql) === TRUE) {
+   // echo "Signup successful!";
+   $conn->close();
+    include("login.php");
+
 } else {
     $_vrerify = md5(rand());
     $_data = ("INSERT INTO register_tbl (firstname, lastname,email,contact,password,d_o_b,country,status,Gender,verify_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");

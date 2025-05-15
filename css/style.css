@@ -1,10 +1,14 @@
+:root {
+  --color-BG: #056cc5;
+  --color-blue: #0659e7;
+}
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 body {
-  background-color: #056cc5;
+  background-color: var(--color-BG);
   width: 100%;
 }
 .container {
@@ -13,7 +17,7 @@ body {
   align-items: center;
 }
 .sub-container {
-  width: 80vw;
+  width: 80%;
   margin-top: 10vh;
   display: flex;
   flex-direction: row;
@@ -41,6 +45,7 @@ body {
   box-shadow: 5px 5px 40px #191919cb;
   position: relative;
 }
+
 .login-form {
   padding: 85px 60px;
 }
@@ -56,6 +61,7 @@ body {
   color: #a4a1a1;
   margin-top: 5px;
 }
+
 .circle1 {
   width: 40px;
   height: 40px;
@@ -95,7 +101,7 @@ body {
 }
 input:focus {
   outline: none;
-  border: 2px solid #0659e7;
+  border: 2px solid var(--color-blue);
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   border-radius: 10px;
 }
@@ -122,13 +128,13 @@ input:focus {
 .check-icon {
   position: absolute;
   right: 3%;
-  color: #0659e7;
+  color: var(--color-blue);
   display: none;
 }
 .check-icon-show {
   position: absolute;
   right: 3%;
-  color: #0659e7;
+  color: var(--color-blue);
   display: block;
 }
 .eye-icon {
@@ -175,7 +181,7 @@ input:focus {
   border-radius: 10px;
   border: none;
   color: white;
-  background-image: linear-gradient(to right, #0659e7, #69acff);
+  background-image: linear-gradient(to right, var(--color-blue), #69acff);
   opacity: 0.85;
   transition: 0.05s ease-in-out;
 }
@@ -268,21 +274,9 @@ input:focus {
   font-size: 14px;
   padding-right: 5px;
   text-decoration: underline;
-  color: #058dfd;
+  color: var(--color-blue);
 }
-@media (max-width: 1100px) {
-  .login-form {
-    width: 400px;
-  }
-  .login-form > h1 {
-    font-size: 20px;
-  }
-}
-@media (max-width: 500px) {
-  .login-form {
-    width: 300px;
-  }
-}
+
 footer {
   width: 100%;
   display: flex;
@@ -306,4 +300,125 @@ footer {
   position: absolute;
   left: 0%;
   top: -10%;
+}
+
+/* responsive CSS */
+
+@media (max-width: 1100px) {
+  .login-form {
+    width: 450px;
+  }
+  .login-form > h1 {
+    font-size: 20px;
+  }
+  .login-wrapper-cols > h1 {
+    font-size: 50px;
+  }
+  .google-btn::before {
+    left: 15%;
+  }
+  .facebook-btn::before {
+    left: 10%;
+  }
+}
+@media (max-width: 980px) {
+  .sub-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-wrapper-cols > h1 {
+    text-align: center;
+  }
+  .login-form {
+    width: 450px;
+    margin-top: 20px;
+  }
+  #slideshow {
+    display: none;
+  }
+  .foot-para > p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 700px) {
+  .login-form {
+    width: 450px;
+    margin-top: 20px;
+  }
+  .login-form > h1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 580px) {
+  .login-form {
+    width: 400px;
+    margin-top: 20px;
+    padding: 85px 30px;
+  }
+  .login-wrapper-cols > h1 {
+    font-size: 35px;
+  }
+  .foot-para {
+    width: 100%;
+    padding: 60px 0px 50px 0px;
+    margin: 0px 15%;
+  }
+  .foot-para > p {
+    font-size: 12px;
+  }
+  .foot-img {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .login-form {
+    width: 350px;
+    margin-top: 20px;
+    padding: 60px 20px;
+  }
+  .login-wrapper-cols > h1 {
+    font-size: 25px;
+  }
+  .google-btn::before {
+    left: 5%;
+  }
+  .facebook-btn::before {
+    left: 5%;
+  }
+}
+@media (max-width: 420px) {
+  .login-form {
+    width: 300px;
+    margin-top: 20px;
+    padding: 60px 20px;
+  }
+  .login-wrapper-cols > h1 {
+    font-size: 25px;
+  }
+  .google-btn::before {
+    left: 5%;
+  }
+  .facebook-btn::before {
+    left: 5%;
+  }
+}
+@media (max-width: 370px) {
+  .login-form {
+    width: 280px;
+    margin-top: 20px;
+    padding: 60px 20px;
+  }
+  .login-wrapper-cols > h1 {
+    font-size: 25px;
+  }
+  .google-btn::before {
+    left: 5%;
+  }
+  .facebook-btn::before {
+    left: 5%;
+  }
+  .no-account p,
+  .no-account a {
+    font-size: 12px;
+  }
 }

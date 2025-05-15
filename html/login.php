@@ -22,8 +22,8 @@
       </div>
       <div class="login-wrapper-cols">
         <div class="login-form">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
+          <!-- <div class="circle1"></div>
+          <div class="circle2"></div> -->
           <h3>Log In</h3>
           <p>Welcome back! Please enter your credentials</p>
           <form class="form" method="post" action="">
